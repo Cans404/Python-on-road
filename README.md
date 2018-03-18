@@ -1,7 +1,4 @@
-# Python-on-road
-self learning
-
-recursive_test.py 题目：
+1、recursive_test.py 题目：
 
 海滩上有一堆桃子，五只猴子来分；
 第一只猴子把这堆桃子平均分为五份，多了一个，这只猴子把多的一个扔入海中，拿走了一份；
