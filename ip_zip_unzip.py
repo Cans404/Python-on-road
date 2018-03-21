@@ -3,7 +3,7 @@
 # create by Cans, 20180319
 
 import re
-import subprocess
+# import subprocess
 
 def ip_encrypt(ip) :
 	ip_bins = []
@@ -19,14 +19,14 @@ def ip_encrypt(ip) :
 	ip_code_str = re.sub(r"\d", lambda m: chr(ord(m.group()) + 49), ip_code_bin)
 	print "2. %-45s ------> %45s" % (ip_code_bin, ip_code_str)
 
-	# doesn't work in re, why?
-	# ip_code_zip = re.sub(r"(\w)+(?=[^\1]|$)", lambda m: len(m.group()), ip_code_str)
-	# ip_code_zip = re.sub('''(\w)(\1){0,}''', lambda m: len(m.group()), ip_code_str)
-	cmd = r'''echo "%s" | grep -E "(\w)(\1)*" -o''' % ip_code_str
-	sub_p = subprocess.Popen(cmd , shell=True, stdout=subprocess.PIPE)
-	rte = sub_p.communicate()[0].strip().split("\n")
-	length = [ len(x) for x in rte]
-	ip_code_zip = "".join([ str(i) + j[0] for i, j in zip(length, rte)])
+	# wrong pattern: ip_code_zip = re.sub(r"(\w)+(?=[^\1]|$)", lambda m: len(m.group()), ip_code_str)
+	# cmd = r'''echo "%s" | grep -E "(\w)(\1)*" -o''' % ip_code_str
+	# sub_p = subprocess.Popen(cmd , shell=True, stdout=subprocess.PIPE)
+	# rte = sub_p.communicate()[0].strip().split("\n")
+	# length = [ len(x) for x in rte]
+	# ip_code_zip = "".join([ str(i) + j[0] for i, j in zip(length, rte)])
+        ip_code_zip = re.sub(r"(?P<all>(?P<chr>\w)(?P=chr)*)", lambda m: \
+                str(len(m.expand(r"\g<all>"))) + m.expand(r"\g<chr>"), ip_code_str)
 	print "3. %-45s ------> %45s" % (ip_code_str, ip_code_zip)
 
 	ip_code = ip_code_zip.replace("1", "")
