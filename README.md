@@ -14,4 +14,10 @@ a. 转化为二进制：00000001000000010000000110000001<br>
 b. 替换（0用a表示，1用b表示）：aaaaaaabaaaaaaabaaaaaaabbaaaaaab<br>
 c. 将连续相同的字符合并：7a1b7a1b7a2b6a1b<br>
 d. 减少长度，将数字1去掉：7ab7ab7a2b6ab<br>    
-<img src="https://raw.githubusercontent.com/Cans404/code4fun/master/img/ip_zip_unzip.png" alt="图片加载失败时显示">
+<img src="https://raw.githubusercontent.com/Cans404/code4fun/master/img/ip_zip_unzip.png" alt="图片加载失败时显示"><br>
+
+**3、BQBJ.sql**
+<br>
+
+公鸡5文钱一只，母鸡3文钱一只，小鸡3只一文钱。用100文钱买一百只鸡，其中公鸡、母鸡、小鸡都必须要有，问公鸡，母鸡，小鸡要买多少只刚好凑足100文钱？<br>
+<img src="https://raw.githubusercontent.com/Cans404/code4fun/master/img/BQBJ.jpg" alt="图片加载失败时显示"><br>
